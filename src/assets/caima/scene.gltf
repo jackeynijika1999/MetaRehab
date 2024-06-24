@@ -1,0 +1,272 @@
+{
+    "accessors": [
+        {
+            "bufferView": 1,
+            "componentType": 5126,
+            "count": 3878,
+            "max": [
+                0.9999785423278809,
+                0.9999691247940063,
+                1
+            ],
+            "min": [
+                -0.9999785423278809,
+                -0.999997615814209,
+                -1
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "componentType": 5126,
+            "count": 3878,
+            "max": [
+                0.999997615814209,
+                0.999997615814209,
+                0.9992268681526184,
+                1
+            ],
+            "min": [
+                -0.999997615814209,
+                -0.999997615814209,
+                -0.999389111995697,
+                -1
+            ],
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 3,
+            "componentType": 5126,
+            "count": 3878,
+            "max": [
+                0.9857826828956604,
+                0.9867773652076721
+            ],
+            "min": [
+                0.012380599975585938,
+                0.009148780256509781
+            ],
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 1,
+            "componentType": 5126,
+            "count": 3878,
+            "max": [
+                9.222986221313477,
+                29.009485244750977,
+                0.0001265299943042919
+            ],
+            "min": [
+                -9.222999572753906,
+                -26.77239990234375,
+                -55.13330078125
+            ],
+            "type": "VEC3",
+            "byteOffset": 46536
+        },
+        {
+            "bufferView": 0,
+            "componentType": 5123,
+            "count": 9517,
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 0,
+            "componentType": 5123,
+            "count": 576,
+            "type": "SCALAR",
+            "byteOffset": 19034
+        }
+    ],
+    "asset": {
+        "extras": {
+            "author": "HKEP (https://sketchfab.com/HKEP)",
+            "license": "see viewerUrl (https://sketchfab.com/3d-models/263785a3130344c2bdcdcb8017f97822)",
+            "source": "https://sketchfab.com/3d-models/263785a3130344c2bdcdcb8017f97822",
+            "title": "唐三彩馬"
+        },
+        "generator": "OpenSceneGraph",
+        "version": "2.0"
+    },
+    "buffers": [
+        {
+            "byteLength": 206332,
+            "uri": "scene.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 20188,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 20188,
+            "byteStride": 12,
+            "byteLength": 93072,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 113260,
+            "byteStride": 16,
+            "byteLength": 62048,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 175308,
+            "byteStride": 8,
+            "byteLength": 31024,
+            "target": 34962
+        }
+    ],
+    "images": [
+        {
+            "uri": "Curio37_co.png"
+        },
+        {
+            "uri": "Curio37_bmp.png"
+        }
+    ],
+    "materials": [
+        {
+            "doubleSided": true,
+            "name": "blinn1",
+            "normalTexture": {
+                "index": 1
+            },
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "metallicFactor": 0,
+                "roughnessFactor": 0.7716871257350363
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "TEMPORARY_IMPORT_NAMESPACE__ï¿½ï¿½ï¿½T_m__:Tscm_0S1_blinn1_0",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 0,
+                        "TANGENT": 1,
+                        "TEXCOORD_0": 2,
+                        "POSITION": 3
+                    },
+                    "indices": 4,
+                    "material": 0,
+                    "mode": 5
+                },
+                {
+                    "attributes": {
+                        "NORMAL": 0,
+                        "TANGENT": 1,
+                        "TEXCOORD_0": 2,
+                        "POSITION": 3
+                    },
+                    "indices": 5,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "children": [
+                1
+            ],
+            "matrix": [
+                0.6057703219429788,
+                -0.11562378726635805,
+                0.7871934049973258,
+                0,
+                0.7956395647861534,
+                0.08803164389572994,
+                -0.5993397305534781,
+                0,
+                0,
+                0.9893844396852012,
+                0.14532181704341793,
+                0,
+                0.008899644214216407,
+                -0.27175485403415894,
+                -0.9868321368877273,
+                1
+            ],
+            "name": "Sketchfab_model"
+        },
+        {
+            "children": [
+                2
+            ],
+            "name": "Scene - RootModel"
+        },
+        {
+            "children": [
+                3
+            ],
+            "matrix": [
+                0.01,
+                0,
+                0,
+                0,
+                0,
+                -0.01,
+                -1.62921e-9,
+                0,
+                0,
+                1.62921e-9,
+                -0.01,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "name": "Optim - RootMatrix"
+        },
+        {
+            "children": [
+                4
+            ],
+            "name": "TEMPORARY_IMPORT_NAMESPACE__ï¿½ï¿½ï¿½T_m__:Tscm_0S1"
+        },
+        {
+            "mesh": 0,
+            "name": "TEMPORARY_IMPORT_NAMESPACE__ï¿½ï¿½ï¿½T_m__:Tscm_0S1_blinn1_0"
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9987,
+            "wrapS": 10497,
+            "wrapT": 10497
+        }
+    ],
+    "scene": 0,
+    "scenes": [
+        {
+            "name": "Scene",
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "textures": [
+        {
+            "sampler": 0,
+            "source": 0
+        },
+        {
+            "sampler": 0,
+            "source": 1
+        }
+    ]
+}

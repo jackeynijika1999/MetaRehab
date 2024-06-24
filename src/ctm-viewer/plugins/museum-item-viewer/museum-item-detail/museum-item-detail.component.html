@@ -1,0 +1,21 @@
+<div class="dialog" id="ctmViewer-plugin-MuseumItem-viewer-dialog">
+    <div class="dialog-content">
+      <canvas id="ctmViewer-plugin-MuseumItem-viewer-canvas"></canvas>
+      <div class="item-info">
+        <div class=title>
+            <p style="margin-bottom: 0px;"> {{itemName}}</p>
+        </div>
+        <hr style="margin:10px; width: 90%;">
+        <div class="item-category">
+          <p>分类: {{itemCategory}}</p>
+        </div>
+        <div class="item-era">
+            <p>年代: {{itemEra}}</p>
+        </div>
+        <div class=description>
+          <p style="padding-bottom: 0px; font-size: 20px; font-weight: bold;">文物描述:</p>
+          <div [innerHTML]="itemDescription.split('\n').join('<br>')"></div>
+        </div>
+      </div>
+      <div class="close-btn" (click)="onClose()">✖️</div>
+    </div>

@@ -1,0 +1,92 @@
+.dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.dialog-content {
+    display: flex;
+    width: 80%;
+    height: 80%;
+}
+
+.title {
+    width: 95%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    max-height: 4em;
+    /* 超出两行省略剩下的 */
+    line-height: 2em;
+    font-size: 28px;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+
+.item-category{
+    padding-left: 10px;
+}
+.item-era{
+    padding-left: 10px;
+}
+.description {
+    font-size: 17px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+canvas {
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.item-info {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(92, 92, 92);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: white;
+    padding-left: 20px;
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 30px;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    height: 10px;
+    border-radius: 25px;
+    max-height: 10px;
+  }
