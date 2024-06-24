@@ -7,6 +7,7 @@ import { DTRenderer } from "../../../dt-renderer";
 import { Avatar } from "../../digital-human/avatar/avatar";
 import { MOCK_TALKING_HELLO1, MOCK_TALKING_JSY1, MOCK_TALKING_TK1, TALKING_HELLO1_WAV } from "./mock-voice-data";
 import { AvatarConfiguration } from '../../digital-human/avatar/avatar-configs';
+import { AudioRecordController } from '../../sound/audio_record_controller';
 
 const AgentViewerCanvasId = 'ctmViewer-plugin-Agent-canvas';
 const AgentViewerDialogId = 'ctmViewer-plugin-Agent-dialog';
@@ -21,6 +22,7 @@ export interface PluginAgentConfig {
 
 export class PluginAgent extends BasePlugin {
     private renderer: DTRenderer | undefined;
+    private audioController: AudioRecordController | undefined;
     avatar: Avatar | undefined;
     isDialogOpen = false;
     private mockVoiceIndex = 0;
@@ -28,6 +30,7 @@ export class PluginAgent extends BasePlugin {
     constructor(ctmViewer: CTMViewer, private configs: PluginAgentConfig) {
         super(ctmViewer);
         this.listenKeyboard();
+        this.audioController = AudioRecordController.getAudioControllerInstance(ctmViewer);
         if (configs.open) {
             this.openAgent();
         }
@@ -38,6 +41,7 @@ export class PluginAgent extends BasePlugin {
             this.createDialog();
             this.initRenderer();
             this.initAvatar();
+            this.audioController?.subscribe(this.handleAudioData);
         }
     }
 
@@ -106,6 +110,7 @@ export class PluginAgent extends BasePlugin {
 
     closeAgent() {
         if (this.isDialogOpen) {
+            this.audioController?.unsubscribe(this.handleAudioData);
             this.avatar?.dispose();
             this.avatar = undefined;
             this.renderer?.dispose();
@@ -164,12 +169,22 @@ export class PluginAgent extends BasePlugin {
     private listenKeyboard() {
         document.addEventListener('keydown', this.onPressKey);
     }
+
     private removeKeyboardListener() {
         document.removeEventListener('keydown', this.onPressKey);
     }
 
+    //处理音频数据
+    private handleAudioData = (data: { base64: string, raw: Int16Array }) => {
+        // data包含Base64格式和Int16Array二进制格式的pcm音频数据
+        // console.log('PluginAgent received audio data:', data.base64);
+        setTimeout(() => {
+            // 结束loading状态
+            this.audioController?.endLoading();
+        }, 3000);
+    }
+
     private onPressKey = (event: KeyboardEvent) => {
-        console.log('press key', event)
         switch (event.key) {
             case 'h':
             case 'H': {
@@ -180,12 +195,12 @@ export class PluginAgent extends BasePlugin {
                 }
                 break;
             }
-            case 'r':
-            case 'R': {
-                // voice recognition
-                // this.testTalking();
-                break;
-            }
+            // case 'r':
+            // case 'R': {
+            //     // voice recognition
+            //     // this.testTalking();
+            // }
         }
     }
+
 }

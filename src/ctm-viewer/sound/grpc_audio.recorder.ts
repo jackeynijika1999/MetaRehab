@@ -1,3 +1,5 @@
+import { arrayBufferToBase64 } from "./sound-utils";
+
 export class GrpcAudioRecorder {
   private static SAMPLE_RATE_HZ = 16000;
   private static BUFFER_SIZE_BYTES = 2048;
@@ -10,7 +12,7 @@ export class GrpcAudioRecorder {
   private leftChannel: Float32Array[] = [];
   private recordingLength = 0;
   private interval: ReturnType<typeof setInterval> | null = null;
-  private listener: ((base64AudioChunk: string) => void) | null = null;
+  private listener: ((base64AudioChunk: string, rawAudioChunk: Int16Array) => void) | null = null;
 
   stopConvertion() {
     if (!this.currentMediaStream) {
@@ -37,7 +39,7 @@ export class GrpcAudioRecorder {
 
   // Consumes stream that is coming out of local webrtc loopback and converts it to the messages for the server.
   async startConvertion(
-    listener: (chunk: string) => void,
+    listener: (base64AudioChunk: string, rawAudioChunk: Int16Array) => void,
   ) {
     this.listener = listener;
     const context = new AudioContext({
@@ -85,7 +87,7 @@ export class GrpcAudioRecorder {
     this.recordingLength += GrpcAudioRecorder.BUFFER_SIZE_BYTES;
   };
 
-  private intervalFunction = (listener: (base64AudioChunk: string) => void) => {
+  private intervalFunction = (listener: (base64AudioChunk: string, rawAudioChunk: Int16Array) => void) => {
     const PCM32fSamples = this.mergeBuffers(
       this.leftChannel,
       this.recordingLength,
@@ -100,16 +102,6 @@ export class GrpcAudioRecorder {
       (k) => 32767 * Math.min(1, k),
     );
 
-    listener?.(this.arrayBufferToBase64(PCM16iSamples.buffer));
+    listener?.(arrayBufferToBase64(PCM16iSamples.buffer), PCM16iSamples);
   };
-
-  private arrayBufferToBase64(buffer: ArrayBuffer) {
-    let binary = '';
-    const bytes = new Uint8Array(buffer);
-    const length = bytes.byteLength;
-    for (let i = 0; i < length; i++) {
-      binary += String.fromCharCode(bytes[i]);
-    }
-    return window.btoa(binary);
-  }
 }
