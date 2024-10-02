@@ -1,21 +1,47 @@
+<!--<div class="dialog" id="ctmViewer-plugin-MuseumItem-viewer-dialog">-->
+<!--    <div class="dialog-content">-->
+<!--      <canvas id="ctmViewer-plugin-MuseumItem-viewer-canvas"></canvas>-->
+<!--      <div class="item-info">-->
+<!--        <div class=title>-->
+<!--            <p style="margin-bottom: 0px;"> {{itemName}}</p>-->
+<!--        </div>-->
+<!--        <hr style="margin:10px; width: 90%;">-->
+<!--        <div class="item-category">-->
+<!--          <p>分类: {{itemCategory}}</p>-->
+<!--        </div>-->
+<!--        <div class="item-era">-->
+<!--            <p>使用建议: {{itemEra}}</p>-->
+<!--        </div>-->
+<!--        <div class=description>-->
+<!--          <p style="padding-bottom: 0px; font-size: 20px; font-weight: bold;">器械介绍:</p>-->
+<!--          <div [innerHTML]="itemDescription.split('\n').join('<br>')"></div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="close-btn" (click)="onClose()">✖️</div>-->
+<!--    </div>-->
 <div class="dialog" id="ctmViewer-plugin-MuseumItem-viewer-dialog">
-    <div class="dialog-content">
-      <canvas id="ctmViewer-plugin-MuseumItem-viewer-canvas"></canvas>
-      <div class="item-info">
-        <div class=title>
-            <p style="margin-bottom: 0px;"> {{itemName}}</p>
-        </div>
-        <hr style="margin:10px; width: 90%;">
-        <div class="item-category">
-          <p>分类: {{itemCategory}}</p>
-        </div>
-        <div class="item-era">
-            <p>年代: {{itemEra}}</p>
-        </div>
-        <div class=description>
-          <p style="padding-bottom: 0px; font-size: 20px; font-weight: bold;">文物描述:</p>
-          <div [innerHTML]="itemDescription.split('\n').join('<br>')"></div>
-        </div>
+  <div class="dialog-content">
+    <video id="museum-item-video" controls (click)="playVideo()">
+      <source [src]="videoSource" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="item-info">
+      <div class="title">
+        <p>{{ itemName }}</p>
       </div>
-      <div class="close-btn" (click)="onClose()">✖️</div>
+      <hr>
+      <div class="item-category">
+        <p>分类: {{ itemCategory }}</p>
+      </div>
+      <div class="item-era">
+        <p>使用建议: {{ itemEra }}</p>
+      </div>
+      <div class="description">
+        <p><strong>器械结束:</strong></p>
+        <div [innerHTML]="itemDescription"></div>
+      </div>
     </div>
+    <div class="close-btn" (click)="onClose()">✖️</div>
+  </div>
+</div>

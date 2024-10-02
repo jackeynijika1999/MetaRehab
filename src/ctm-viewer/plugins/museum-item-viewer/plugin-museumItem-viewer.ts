@@ -27,6 +27,7 @@ export interface PluginMuseumItemViewerConfig {
     }
     model: {
         source: string;
+        videoSource?: string; //
         position: number[];
         rotation: [number, number, number];
         scale: number[];
@@ -48,8 +49,8 @@ export class PluginMuseumItemViewer extends BasePlugin {
     private vcr!: ViewContainerRef;
 
     //测试
-    // private transformControls: TransformControls | undefined;
-    // private selectedObject: Object3D | undefined;
+    private transformControls: TransformControls | undefined;
+    private selectedObject: Object3D | undefined;
 
     constructor(ctmViewer: CTMViewer, private configs: PluginMuseumItemViewerConfig[], vcr: ViewContainerRef) {
         super(ctmViewer);
@@ -77,22 +78,27 @@ export class PluginMuseumItemViewer extends BasePlugin {
     //     const boxMesh = new Mesh(boxGeometry, boxMaterial);
     //     boxMesh.position.set(-1.1057027895716331,0,3.84258795908171);
     //     boxMesh.rotation.set(0, 2, 0);
-    //     boxMesh.scale.set(1.5, 2.5, 2);
+    //     boxMesh.scale.set(0.3, 0.3, 0.3);
     //     boxMesh.visible = true;
     //     // Add TransformControls for the box
     //     if (this.ctmViewer.renderer?.camera && this.ctmViewer.renderer) {
     //         this.transformControls = new TransformControls(this.ctmViewer.renderer.camera, this.ctmViewer.renderer.renderer?.domElement);
     //         this.transformControls.attach(boxMesh);
     //         this.ctmViewer.renderer.scene?.add(this.transformControls);
-
+    //
     //         // Listen to change event to log the position
     //         document.addEventListener('keydown', (event) => {
     //             if (event.key === 'q' ) {
     //                 console.log(`Position: ${boxMesh.position.toArray()}`);
     //             }
     //         });
-
+    //       // 监听 TransformControls 的 change 事件，实时打印盒子的位置
+    //         this.transformControls.addEventListener('change', () => {
+    //           console.log(`TransformControls Updated Position: ${boxMesh.position.toArray()}`);
+    //       });
+    //
     //     }
+    //
     //     this.ctmViewer.renderer?.scene?.add(boxMesh);
     //     return boxMesh;
     // }
@@ -132,6 +138,12 @@ export class PluginMuseumItemViewer extends BasePlugin {
     }
 
     private onClose = () => {
+        // 停止播放视频
+        const videoElement = document.getElementById('museum-item-video') as HTMLVideoElement;
+        if (videoElement) {
+          videoElement.pause();
+          videoElement.currentTime = 0; // 将视频进度重置
+        }
         // 遍历插件列表，检查是否存在 PluginAgent
         for (const plugin of this.ctmViewer.plugins) {
             if (plugin instanceof PluginAgent) {
@@ -168,6 +180,20 @@ export class PluginMuseumItemViewer extends BasePlugin {
             }
         });
         this.isDialogOpen = true;
+
+      // 替换为视频播放
+      const videoElement = document.createElement('video');
+      videoElement.id = 'museum-item-video';
+      videoElement.controls = true;
+      videoElement.autoplay = true;
+      videoElement.src = '/Users/jackey/Documents/metarehablab/src/assets/leg1/leg1.MP4'; // 指定你的视频路径
+      videoElement.style.width = '50%'; // 设定视频宽度
+      videoElement.style.height = '100%'; // 设定视频高度
+
+      const container = document.getElementById(MuseumItemViewerCanvasId); // 替换原来的 canvas
+      if (container) {
+        container.appendChild(videoElement); // 将视频元素添加到容器中
+      }
 
         // 检查并使用 agentDescription
         if (modelConfig.agentDescription) {

@@ -55,6 +55,16 @@ canvas {
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
 }
+
+.video-player {
+  width: 50%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  object-fit: cover; /* 保证视频在容器内自适应 */
+}
+
 .item-info {
     width: 50%;
     height: 100%;

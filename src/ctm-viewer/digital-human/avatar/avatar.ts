@@ -145,20 +145,23 @@ export class Avatar {
     this.setFacialBlendShapes([]);
   }
 
-  talk(audioBase64: string, blendshapes: number[][], morphScaler = 1) {
+  // 增加muteAudio参数，用于控制是否播放音频
+  talk(audioBase64: string, blendshapes: number[][], morphScaler = 1, muteAudio = false) {
     if (this.audio) {
       this.audio.pause();
       this.audio = undefined;
     }
 
-    if (audioBase64) {
+    if (audioBase64 && !muteAudio) {
       this.audio = new Audio('data:audio/wav;base64,' + audioBase64);
       this.audio?.play().catch(error => {
         console.error('Audio playback error:', error);
       });
-      this.setFacialBlendShapes(blendshapes, morphScaler);
     }
+
+    this.setFacialBlendShapes(blendshapes, morphScaler);
   }
+
 
   stopTalking() {
     if (this.audio) {

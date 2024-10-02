@@ -23,6 +23,7 @@
       "ES2022",
       "dom"
     ],
+//    "types": ["node"] // 6月24添加这行
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

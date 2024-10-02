@@ -14,7 +14,8 @@ import { PluginNPC } from '../ctm-viewer/plugins/npc/plugin-npc';
 // const DefaultSceneName = 'clearwater-store';
 // const DefaultSceneName = 'tang-pottery-two-people-240125';
 // 新增深圳博物馆
-const DefaultSceneName = 'shenzhen-museum-240625'
+// const DefaultSceneName = 'shenzhen-museum-240625'
+const DefaultSceneName = 'polyu-st011'
 import {AppModule} from './app.module';
 
 @Component({
@@ -27,7 +28,7 @@ export class AppComponent {
   private viewer: CTMViewer | undefined;
 
   constructor(private vcr: ViewContainerRef) {}
- 
+
   ngOnInit() {
     // polyu-clock-tower-240123
     // tang-pottery-two-people-240125

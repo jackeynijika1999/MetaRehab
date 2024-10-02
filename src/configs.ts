@@ -272,6 +272,78 @@ export function getCTMViewerConfigs(sceneName: string): Promise<CTMViewerConfig>
                 open: false
           },
         },
+        'polyu-st011': {
+            camera: {
+              posotion: [2.5, 0.125, 0.38],
+              lookAt: [-10, 0, 1],
+            },
+            gs: {
+              source: 'https://lumalabs.ai/capture/a680ac70-173e-4e07-87c9-b1f9d30760fa',
+              position: [0, 0, 0],
+              rotation: [0, Math.PI, 0],
+              scale: [1, 1, 1],
+            },
+            agent: {
+              avatarConfig: JSON.parse(JSON.stringify({
+                "avatar": {
+                  "baseURIs": {
+                    "ANIMATIONS": "assets/avatar/lz-face-model/animations/",
+                    "MODELS": "assets/digital-human/girl-face-model3/"
+                  },
+                  "modelInfo": {
+                    "avatarRootName": "root",
+                    "avatarHeadName": "mesh"
+                  },
+                  "defaults": {
+                    "IDLE_ANIMATION": "",
+                    "EMOTION": "NEUTRAL",
+                    "MODEL": "model.gltf"
+                  },
+                  "animations": {}
+                }
+              })),
+              position: [0, -0.02, 0.35],
+              rotation: [Math.PI / 15, Math.PI / 100, 0],
+              scale: [1, 1, 1],
+              open: false
+            },
+          },
+        'polyu-st816': {
+            camera: {
+              posotion: [-4, 0, 0.78],
+              lookAt: [0, 0, -1],
+            },
+            gs: {
+              source: 'https://lumalabs.ai/capture/a680ac70-173e-4e07-87c9-b1f9d30760fa',
+              position: [0, 0, 0],
+              rotation: [0, Math.PI, 0],
+              scale: [1, 1, 1],
+            },
+            agent: {
+              avatarConfig: JSON.parse(JSON.stringify({
+                "avatar": {
+                  "baseURIs": {
+                    "ANIMATIONS": "assets/avatar/lz-face-model/animations/",
+                    "MODELS": "assets/digital-human/girl-face-model3/"
+                  },
+                  "modelInfo": {
+                    "avatarRootName": "root",
+                    "avatarHeadName": "mesh"
+                  },
+                  "defaults": {
+                    "IDLE_ANIMATION": "",
+                    "EMOTION": "NEUTRAL",
+                    "MODEL": "model.gltf"
+                  },
+                  "animations": {}
+                }
+              })),
+              position: [0, -0.02, 0.35],
+              rotation: [Math.PI / 15, Math.PI / 100, 0],
+              scale: [1, 1, 1],
+              open: false
+            },
+          },
         'shenzhen-museum-demo-2': {
             camera: {
                 posotion: [-1.404010475375047, 0.08155294383508468, -0.23198189324992072],
@@ -290,89 +362,118 @@ export function getCTMViewerConfigs(sceneName: string): Promise<CTMViewerConfig>
 }
 export function getMuseumItemViewerConfigs(sceneName: string): Promise<PluginMuseumItemViewerConfig[]> {
     const configs: { [key: string]: PluginMuseumItemViewerConfig[] } = {
-      'shenzhen-museum-240625': [{
-        selector: {
-          box: {
-            position: [0.4724930689626776, -0.5254334596886211, 0.3344837032130358],
-            rotation: [0, 2.5, 0],
-            scale: [1, 2, 1],
-          },
-        },
-        model: {
-          source: 'assets/bw porcelain bottle square/123654.gltf',
-          position: [0, -0.3, 0.1],
-          rotation: [0, 0, 0],
-          scale: [1, 1, 1],
-        },
-        detail: {
-          name: '青花折枝花卉纹六方瓶',
-          description: '整器造型周正，恢宏俊伟，釉质肥厚润泽，青花色泽青翠。\n绘画工艺精湛，图案雍容华贵，系乾隆时期官窑青花的典型器物。乾隆-朝国力强盛，瓷业繁荣，尤其早期唐英督陶之时，所出之器工精料细、为后世难以企及。\n此六方瓶即为乾隆早期御瓷之尊贵造型，其形制肇始于雍正朝，流行于乾隆前期。传世雍正款者十分稀少，目前所知唯见法国吉美博物馆有藏。\n品种所见有青花、粉彩镂空、仿汝、冬青、天蓝诸般颜色釉，均为空前绝后之名品。',
-          category: '青花瓷器',
-          era: '清朝',
-        },
-        agentDescription: {
-          audioFileName: './assets/agent_wave/bwSquare.wav',
-          blendshapeFileName: './assets/agent_blendshape/bwSquare.json',
-
-        }
-
-      },
-        {
+      'polyu-st011': [{
+        // 'shenzhen-museum-240625': [{
           selector: {
             box: {
-              position: [-1.6869010383024021, -0.21507744826588124, -1.1726073042536085],
+              position: [0.2487475276840469,-0.2685565519678386,-1.141785805462551],
               rotation: [0, 2.5, 0],
-              scale: [0.5, 0.5, 0.5],
+              scale: [1, 2, 1],
             },
           },
           model: {
-            source: 'assets/bw porcelain basin/scene.gltf',
-            position: [0, -0.17, 0],
+            source: 'assets/bw porcelain bottle square/123654.gltf',
+            videoSource: 'assets/leg1/leg1.MP4',  // 添加视频文件路径
+            position: [0, -0.3, 0.1],
             rotation: [0, 0, 0],
-            scale: [0.00010, 0.00010, 0.00010],
+            scale: [1, 1, 1],
           },
           detail: {
-            name: '青花竹石纹碗',
-            description: '青花竹石纹碗，明永乐，高7.1厘米，口径16.4厘米，足径5.8厘米。\n碗撇口，深弧腹，圈足。内光素无纹饰。外壁青花翠竹、怪石及花草纹装饰。圈足外墙绘回纹。圈足内施青白色釉。\n此碗形体秀美，胎体较薄，釉面光润，造型源自北宋汝窑淡天青釉碗。碗上画面大面积留白，给人以清新雅致之视觉感受，完全摆脱了元代和明代洪武时期青花瓷器装饰繁缛的典型风格的影响，堪称永乐一朝开创瓷器装饰新风格的标志性作品。',
-            category: '青花瓷器',
-            era: '北宋',
+            name: '坐式大腿伸展训练器',
+            description: '该器械是一种专门用于锻炼大腿肌肉的器械，通过坐在器械上，将双腿放在器械上，然后用力将双腿向前伸展，从而锻炼大腿肌肉。\n 该器械的使用方法简单，锻炼效果明显，是一种非常适合家庭使用的器械。 ',
+            category: '力量器械',
+            era: '建议每组做15次，每天做3组。',
           },
           agentDescription: {
-            audioFileName: './assets/agent_wave/bwBasin.wav',
-            blendshapeFileName: './assets/agent_blendshape/bwBasin.json',
-          }
-        },
+            audioFileName: './assets/agent_wave/leg1.wav',
+            blendshapeFileName: './assets/agent_blendshape/bwSquare.json',
 
-        // 'shenzhen-museum-demo-2': [{
-        //   selector: {
-        //     box: {
-        //       position: [-1.157786444000783,0.11181129193311846,-0.06529094691500803],
-        //       rotation: [0, 2.5, 0],
-        //       scale: [0.1,0.1, 0.1],
-        //     },
-        //   },
-        //   model: {
-        //     source: 'assets/porcelain_bottle/scene.gltf',
-        //     position: [0, -0.4, 0],
-        //     rotation: [0, 0, 0],
-        //     scale: [1, 1, 1],
-        //   },
-        //   detail: {
-        //     name: '青花折枝花卉纹瓶',
-        //     description: '整器造型圓潤，恢宏俊伟，釉质肥厚润泽，青花色泽青翠。\n绘画工艺精湛，图案雍容华贵，系乾隆时期官窑青花的典型器物。乾隆-朝国力强盛，瓷业繁荣，尤其早期唐英督陶之时，所出之器工精料细、为后世难以企及。\n此六方瓶即为乾隆早期御瓷之尊贵造型，其形制肇始于雍正朝，流行于乾隆前期。传世雍正款者十分稀少，目前所知唯见法国吉美博物馆有藏。\n品种所见有青花、粉彩镂空、仿汝、冬青、天蓝诸般颜色釉，均为空前绝后之名品。',
-        //     category: '青花瓷器',
-        //     era: '春秋',
-        //   },
-        //  },
-      ]
+          }
+
+        },
+          {
+
+            selector: {
+              box: {
+                position: [0.7276243147255687,-0.5027555556082945,-1.3092896296640506],
+                rotation: [0, 2.5, 0],
+                scale: [0.5, 0.5, 0.5],
+              },
+            },
+            model: {
+              source: 'assets/bw porcelain basin/scene.gltf',
+              videoSource: 'assets/leg1/leg1.MP4',  // 添加视频文件路径
+              position: [0, -0.17, 0],
+              rotation: [0, 0, 0],
+              scale: [0.00010, 0.00010, 0.00010],
+            },
+            detail: {
+              name: '坐式大腿伸展训练器',
+              description: '该器械是一种专门用于锻炼大腿肌肉的器械，通过坐在器械上，将双腿放在器械上，然后用力将双腿向前伸展，从而锻炼大腿肌肉。\n 该器械的使用方法简单，锻炼效果明显，是一种非常适合家庭使用的器械。',
+              category: '力量器械',
+              era: '建议每组做15次，每天做3组。',
+            },
+            agentDescription: {
+              audioFileName: './assets/agent_wave/leg1.wav',
+              blendshapeFileName: './assets/agent_blendshape/bwBasin.json',
+            }
+          },
+          //   selector: {
+          //     box: {
+          //       position: [-1.6869010383024021, -0.21507744826588124, -1.1726073042536085],
+          //       rotation: [0, 2.5, 0],
+          //       scale: [0.5, 0.5, 0.5],
+          //     },
+          //   },
+          //   model: {
+          //     source: 'assets/bw porcelain basin/scene.gltf',
+          //     position: [0, -0.17, 0],
+          //     rotation: [0, 0, 0],
+          //     scale: [0.00010, 0.00010, 0.00010],
+          //   },
+          //   detail: {
+          //     name: '青花竹石纹碗',
+          //     description: '青花竹石纹碗，明永乐，高7.1厘米，口径16.4厘米，足径5.8厘米。\n碗撇口，深弧腹，圈足。内光素无纹饰。外壁青花翠竹、怪石及花草纹装饰。圈足外墙绘回纹。圈足内施青白色釉。\n此碗形体秀美，胎体较薄，釉面光润，造型源自北宋汝窑淡天青釉碗。碗上画面大面积留白，给人以清新雅致之视觉感受，完全摆脱了元代和明代洪武时期青花瓷器装饰繁缛的典型风格的影响，堪称永乐一朝开创瓷器装饰新风格的标志性作品。',
+          //     category: '青花瓷器',
+          //     era: '北宋',
+          //   },
+          //   agentDescription: {
+          //     audioFileName: './assets/agent_wave/bwBasin.wav',
+          //     blendshapeFileName: './assets/agent_blendshape/bwBasin.json',
+          //   }
+          // },
+
+          // 'shenzhen-museum-demo-2': [{
+          //   selector: {
+          //     box: {
+          //       position: [-1.157786444000783,0.11181129193311846,-0.06529094691500803],
+          //       rotation: [0, 2.5, 0],
+          //       scale: [0.1,0.1, 0.1],
+          //     },
+          //   },
+          //   model: {
+          //     source: 'assets/porcelain_bottle/scene.gltf',
+          //     position: [0, -0.4, 0],
+          //     rotation: [0, 0, 0],
+          //     scale: [1, 1, 1],
+          //   },
+          //   detail: {
+          //     name: '青花折枝花卉纹瓶',
+          //     description: '整器造型圓潤，恢宏俊伟，釉质肥厚润泽，青花色泽青翠。\n绘画工艺精湛，图案雍容华贵，系乾隆时期官窑青花的典型器物。乾隆-朝国力强盛，瓷业繁荣，尤其早期唐英督陶之时，所出之器工精料细、为后世难以企及。\n此六方瓶即为乾隆早期御瓷之尊贵造型，其形制肇始于雍正朝，流行于乾隆前期。传世雍正款者十分稀少，目前所知唯见法国吉美博物馆有藏。\n品种所见有青花、粉彩镂空、仿汝、冬青、天蓝诸般颜色釉，均为空前绝后之名品。',
+          //     category: '青花瓷器',
+          //     era: '春秋',
+          //   },
+          //  },
+        ]
     }
 
     return Promise.resolve(configs[sceneName] || []);
 }
+
 export function getShopItemlViewerConfigs(sceneName: string): Promise<PluginShopItemViewerConfig[]> {
     const configs: { [key: string]: PluginShopItemViewerConfig[] } = {
         'clearwater-store': [{
-            //blue lifejacket
+            //blue life jacket
             selector: {
                 box: {
                     position: [0.07461252732486531, 0, 0],
@@ -411,7 +512,7 @@ export function getShopItemlViewerConfigs(sceneName: string): Promise<PluginShop
             ],
         },
         {
-            //organge helment
+            //orange helmet
             selector: {
                 box: {
                     position: [-3.1778135161519048, 0.7434225472044291, 0.4043222454092669],
@@ -451,7 +552,7 @@ export function getShopItemlViewerConfigs(sceneName: string): Promise<PluginShop
             ],
         },
         {
-            //black helment
+            //black helmet
             selector: {
                 box: {
                     position: [-3.702135151540858, 0.8177988254276359, -0.3275920291645096],
@@ -492,7 +593,7 @@ export function getShopItemlViewerConfigs(sceneName: string): Promise<PluginShop
 
         },
         {
-            //red helment - (left)
+            //red helmet - (left)
             selector: {
                 box: {
                     position: [-3.6732705313948024, 0.7633715063673605, 1.0967399461667986],
