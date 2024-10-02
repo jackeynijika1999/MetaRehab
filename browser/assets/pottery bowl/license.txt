@@ -1,0 +1,11 @@
+Model Information:
+* title:	Queens College Ceramics Club Bowl “BYDB”
+* source:	https://sketchfab.com/3d-models/queens-college-ceramics-club-bowl-bydb-74cdf4e8294d4f0dbebc0e2b1f1614a8
+* author:	Digital Archaeology Laboratory (https://sketchfab.com/digitalarch)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Queens College Ceramics Club Bowl “BYDB”" (https://sketchfab.com/3d-models/queens-college-ceramics-club-bowl-bydb-74cdf4e8294d4f0dbebc0e2b1f1614a8) by Digital Archaeology Laboratory (https://sketchfab.com/digitalarch) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)

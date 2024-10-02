@@ -1,0 +1,11 @@
+Model Information:
+* title:	Kumme nach einem chinesischen Vorbild, Meissen
+* source:	https://sketchfab.com/3d-models/kumme-nach-einem-chinesischen-vorbild-meissen-7117c2113ddf4cb8ab53a21cb1e64f69
+* author:	skdmuseum (https://sketchfab.com/skdmuseum)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Kumme nach einem chinesischen Vorbild, Meissen" (https://sketchfab.com/3d-models/kumme-nach-einem-chinesischen-vorbild-meissen-7117c2113ddf4cb8ab53a21cb1e64f69) by skdmuseum (https://sketchfab.com/skdmuseum) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)

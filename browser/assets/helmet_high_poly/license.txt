@@ -1,0 +1,11 @@
+Model Information:
+* title:	Helmet (high poly)
+* source:	https://sketchfab.com/3d-models/helmet-high-poly-a24dbc783d944dacac2cb8ff9d70cc23
+* author:	simanovskydmitry (https://sketchfab.com/simanovskydmitry)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Helmet (high poly)" (https://sketchfab.com/3d-models/helmet-high-poly-a24dbc783d944dacac2cb8ff9d70cc23) by simanovskydmitry (https://sketchfab.com/simanovskydmitry) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
