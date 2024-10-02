@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    width: 100%;
+    /* font-family: 'Roboto', sans-serif; */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+#CTM-Viewer-Joystick-Container-Left {
+    pointer-events: auto;
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: transparent;
+    width: 140px;
+    height: 140px;
+    z-index: 12;
+    touch-action: manipulation;
+    background-color: rgba(red, 0.1);
+}
+
+#CTM-Viewer-Joystick-Container-Right {
+    pointer-events: auto;
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    width: 140px;
+    height: 140px;
+    z-index: 12;
+    touch-action: manipulation;
+    background-color: rgba(blue, 0.1);
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

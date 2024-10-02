@@ -1,0 +1,120 @@
+<div class="dialog" id="ctmViewer-plugin-ShopItem-viewer-dialog">
+  <div class="dialog-content">
+    <canvas id="ctmViewer-plugin-ShopItem-viewer-canvas"></canvas>
+    <div class="item-info">
+      <div class=title>
+        <p matTooltip={{itemName}} matTooltipPosition='above' style="z-index: 100000000000; margin-bottom: 0px;">{{
+          itemName }}</p>
+      </div>
+      <div class=sold-quanlity>
+        <p>已售{{ soldQuantity }}件</p>
+      </div>
+      <div class=price-area>
+        <p>￥{{price}}</p>
+      </div>
+      <div class=description>
+        <p style="padding-bottom: 0px; font-size: 20px; font-weight: bold;">商品描述:</p>
+        <div [innerHTML]="itemDescription.split('\n').join('<br>')"></div>
+      </div>
+      <!-- 切换模型颜色的按钮 -->
+      @if(itemName == "高端运动头盔"){
+        <div style="display: flex; align-items: center;">
+          <p style="padding-top: 10px; font-weight: bold; padding-left: 0px; font-size: 20px;">颜色分类 </p>
+          <button type="button" class="btn btn-outline-primary transparent-button" (click)="collapse.toggle()"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+            共3款可选
+            <mat-icon fontIcon="keyboard_arrow_down"></mat-icon>
+          </button>
+        </div>
+        <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+
+          <div class="color-buttons">
+            <button mat-raised-button id="orange-helmet" (click)="switchModel('orange')">橙色</button>
+            <button mat-raised-button id="black-helmet" (click)="switchModel('black')">黑色</button>
+            <button mat-raised-button id="red-helmet" (click)="switchModel('red')">红色</button>
+
+          </div>
+        </div>
+        }
+      <div class="info-rows">
+        <div class="info-row">
+          <div class="left-content">
+            <mat-icon fontIcon="check_circle"></mat-icon>
+            <p style="margin-bottom: 0px;padding-left: 5px;">退货运费险 七天无理由</p>
+          </div>
+          <mat-icon fontIcon="keyboard_arrow_right"></mat-icon>
+        </div>
+        <hr style="margin-top: 5px; margin-bottom: 5px;">
+        <div class="info-row">
+          <div class="left-content">
+            <mat-icon fontIcon="local_shipping"></mat-icon>
+            <p style="margin-bottom: 0px;padding-left: 5px;">浙江杭州</p>
+          </div>
+          <mat-icon fontIcon="keyboard_arrow_right"></mat-icon>
+        </div>
+        <hr style="margin-top: 5px; margin-bottom: 5px;">
+        <div class="info-row">
+          <div class="left-content">
+            <mat-icon fontIcon="storefront"></mat-icon>
+            <p style="margin-bottom: 0px;padding-left: 5px;">Clear Water水上专卖店</p>
+          </div>
+          <mat-icon fontIcon="keyboard_arrow_right"></mat-icon>
+        </div>
+      </div>
+        <!-- 图片走马灯
+      @if (images.length > 0) {
+      <div class="carousel-container">
+        <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
+           class="picsum-carousel">
+          @for (img of images; track img; let i = $index) {
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper" (click)="openImagePreview(img)">
+              <img [src]="img" alt="My image {{ i + 1 }} description" class="carousel-img" />
+            </div>
+          </ng-template>
+          }
+        </ngb-carousel>
+      </div>
+      } -->
+
+       
+        <!-- 评论卡片 -->
+        @if (comments.length > 0) {
+        <div class="comment-title">
+          <p>评论</p>
+          <p class=sold-quanlity>100+</p>
+        </div>
+        <div class="comments-section" style="margin-top: 0;">
+          @for (comment of comments; track comment; let i = $index) {
+          <div class="comment-card comment-cards">
+            <div class="comment-header">
+              <mat-icon fontIcon="person"></mat-icon>
+              <div class="comment-author">{{ comment.author }}</div>
+              <div class="comment-date">{{ comment.date }}</div>
+            </div>
+            <div class="comment-content">{{ comment.content }}</div>
+          </div>
+          }
+
+        </div>
+        <div class="more-comment-btn">
+          <button mat-raised-button class="capsule-button">更多评论</button>
+        </div>
+        }
+        <!-- 固定在底部的按钮 -->
+        <div class="fixed-buttons capsule-background">
+          <div class="left-content " style="font-size: 14px; margin-left: 10px;">
+            <mat-icon fontIcon="sell"></mat-icon>
+            <p style="margin-bottom: 0px; ">券后￥{{price-20}}</p>
+          </div>
+          <div class="right-content">
+          <button mat-raised-button class="button-buy" (click)="onBuy()">购买</button>
+          <button mat-raised-button class="button-add-to-cart">
+            <mat-icon>shopping_cart</mat-icon>
+            加入购物车</button>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="close-btn" (click)="onClose()">✖️</div>
+  </div>
